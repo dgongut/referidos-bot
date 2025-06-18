@@ -1,0 +1,7 @@
+import os
+
+# DOCKER ENVIRONMENT VARIABLES
+TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN")
+REFERIDO = os.environ.get("REFERIDO")
+X_RAPIDAPI_KEY = os.environ.get("X_RAPIDAPI_KEY")
+TELEGRAM_GROUP_NICK = os.environ.get("TELEGRAM_GROUP_NICK")

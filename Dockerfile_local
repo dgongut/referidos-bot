@@ -1,0 +1,11 @@
+FROM alpine:3.21.3
+
+RUN apk add --no-cache python3 py3-pip tzdata
+RUN export PIP_BREAK_SYSTEM_PACKAGES=1; pip3 install requests==2.32.3 pyTelegramBotAPI==4.26.0 beautifulsoup4==4.13.3 Pillow==11.1.0
+
+WORKDIR /app
+COPY Arial.ttf .
+COPY config.py .
+COPY referidos.py .
+
+ENTRYPOINT ["python3", "referidos.py"]

@@ -1,0 +1,11 @@
+services:
+    referidos-bot:
+        container_name: referidos-bot
+        env_file:
+          - .env
+        volumes:
+          - /image_path.jpg:/config/image.jpg # Change left side to your local path leaving right side as is /config/image.jpg
+        build:
+          context: .
+          dockerfile: ./Dockerfile_local
+        tty: true
