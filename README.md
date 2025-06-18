@@ -19,7 +19,7 @@ Genera enlaces de Amazon referidos con tu tag, añade imágenes y pon el precio 
 |:------------- |:---------------:| :-------------|
 |TELEGRAM_TOKEN |✅| Token del bot |
 |TZ |✅| Timezone (Por ejemplo Europe/Madrid) |
-|IP_RANGE |✅| Rango de IPs a detectar. Por ejemplo 192.168.1.1-192.168.1.255 | 
+|REFERIDO |✅| Tag de referido de Amazon, por ejemplo dgongut-21 | 
 |X_RAPIDAPI_KEY |✅| API Key de Real-Time Amazon Data en rapidapi.com. La cuenta gratuita deja 100 consultas al mes, en caso de que falle por indisponibilidad o por agotar las consultas, el bot está preparado para ello y sigue funcionando, solo que no generará la imagen y no pondrá el precio anterior ni actual. | 
 |TELEGRAM_GROUP_NICK |✅| El nick del grupo, por ejemplo si el grupo es @detrasdelmostrador, habría que poner aquí solamente `detrasdelmostrador`|
 
