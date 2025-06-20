@@ -11,7 +11,7 @@ import random
 
 bot = telebot.TeleBot(TELEGRAM_TOKEN)
 
-VERSION = "1.0.0"
+VERSION = "1.0.1"
 
 # === REGEX ===
 amazon_dp_regex = re.compile(
@@ -154,7 +154,7 @@ def obtener_detalles_producto(asin, pais='ES'):
     url = "https://real-time-amazon-data.p.rapidapi.com/product-details"
     querystring = {"asin": asin, "country": pais}
     headers = {
-        "x-rapidapi-key": "7f73376fe7msha3eb952b20f55f9p120448jsn4506166716c8",  # Asegúrate que sea válida
+        "x-rapidapi-key": X_RAPIDAPI_KEY,
         "x-rapidapi-host": "real-time-amazon-data.p.rapidapi.com"
     }
 

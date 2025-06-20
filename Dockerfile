@@ -1,6 +1,6 @@
 FROM alpine:3.21.3
 
-ARG VERSION=1.0.0
+ARG VERSION=1.0.1
 
 WORKDIR /app
 RUN wget https://github.com/dgongut/referidos-bot/archive/refs/tags/v${VERSION}.tar.gz -P /tmp
