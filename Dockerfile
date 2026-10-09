@@ -1,16 +1,18 @@
 FROM alpine:3.21.3
 
-ARG VERSION=1.0.1
+ARG VERSION=1.1.0
+ENV PYTHONUNBUFFERED=1
+
+RUN apk add --no-cache python3 py3-pip tzdata font-dejavu
 
 WORKDIR /app
-RUN wget https://github.com/dgongut/referidos-bot/archive/refs/tags/v${VERSION}.tar.gz -P /tmp
-RUN tar -xf /tmp/v${VERSION}.tar.gz
-RUN mv referidos-bot-${VERSION}/Arial.ttf /app
-RUN mv referidos-bot-${VERSION}/config.py /app
-RUN mv referidos-bot-${VERSION}/referidos.py /app
-RUN rm /tmp/v${VERSION}.tar.gz
-RUN rm -rf referidos-bot-${VERSION}/
-RUN apk add --no-cache python3 py3-pip tzdata
-RUN export PIP_BREAK_SYSTEM_PACKAGES=1; pip3 install requests==2.32.3 pyTelegramBotAPI==4.26.0 beautifulsoup4==4.13.3 Pillow==11.1.0
+RUN wget -q https://github.com/dgongut/referidos-bot/archive/refs/tags/v${VERSION}.tar.gz -O /tmp/src.tar.gz \
+    && tar -xf /tmp/src.tar.gz -C /tmp \
+    && mv /tmp/referidos-bot-${VERSION}/requirements.txt /tmp/referidos-bot-${VERSION}/config.py /tmp/referidos-bot-${VERSION}/referidos.py /app \
+    && rm -rf /tmp/src.tar.gz /tmp/referidos-bot-${VERSION} \
+    && PIP_BREAK_SYSTEM_PACKAGES=1 pip3 install --no-cache-dir -r requirements.txt
+
+RUN adduser -D -H bot
+USER bot
 
 ENTRYPOINT ["python3", "referidos.py"]

@@ -4,8 +4,8 @@ services:
         env_file:
           - .env
         volumes:
-          - /image_path.jpg:/config/image.jpg # Change left side to your local path leaving right side as is /config/image.jpg
+          - ./image.jpg:/config/image.jpg:ro # Imagen cuadrada del grupo (opcional). Cambia solo la parte izquierda
         build:
           context: .
           dockerfile: ./Dockerfile_local
-        tty: true
+        restart: unless-stopped
