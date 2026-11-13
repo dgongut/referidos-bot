@@ -20,7 +20,12 @@ El bot solo hace una cosa: cuando alguien envía al grupo un enlace válido de A
 - La sustitución es todo o nada: si algo falla, el mensaje original se queda tal cual y no se publica nada.
 - El bot ha de ser administrador del grupo con permiso para borrar mensajes.
 
+<!-- dockerhub:skip -->
 ¿Lo buscas en [![](https://badgen.net/badge/icon/docker?icon=docker&label)](https://hub.docker.com/r/dgongut/referidos-bot)?
+<!-- /dockerhub:skip -->
+<!-- dockerhub:only
+📦 Código fuente, incidencias y documentación completa en [GitHub](https://github.com/dgongut/referidos-bot).
+-->
 
 ## Variables de entorno
 
